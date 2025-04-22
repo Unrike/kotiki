@@ -83,7 +83,6 @@ fun MessageImageCard(
         ) {
             Column(modifier = Modifier.padding(12.dp)) {
 
-                // 🔹 Верхняя строка: имя и дата
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween
@@ -103,7 +102,6 @@ fun MessageImageCard(
 
                 Spacer(modifier = Modifier.height(8.dp))
 
-                // 🔹 Изображение
                 Image(
                     painter = painterResource(id = drawableId),
                     contentDescription = null,
@@ -126,7 +124,7 @@ fun MessagesScreen(
 ) {
     val scope = rememberCoroutineScope()
     var messages by remember { mutableStateOf<List<Message>>(emptyList()) }
-    var showSent by remember { mutableStateOf(false) } // <- переключатель
+    var showSent by remember { mutableStateOf(false) }
     var error by remember { mutableStateOf<String?>(null) }
 
     LaunchedEffect(Unit) {

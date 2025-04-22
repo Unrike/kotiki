@@ -46,7 +46,6 @@ fun LoginScreen(navController: NavController) {
                     if (responseCode == HttpURLConnection.HTTP_OK) {
                         Log.d("LOGIN", "Login successful")
                         withContext(Dispatchers.Main){ navController.navigate("select_user/${login}") }
-                        // navController.navigate("home")
                     } else {
                         errorMessage = "Не удалось: $responseCode"
                         Log.e("LOGIN", errorMessage ?: "Unknown error")

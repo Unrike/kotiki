@@ -38,7 +38,6 @@ fun SelectUserScreen(navController: NavController, currentUser: String) {
     val imageList = listOf("waa", "be", "zzz", "mono", "mya", "poker")
     val snackbarHostState = remember { SnackbarHostState() }
 
-    // Загружаем пользователей
     LaunchedEffect(Unit) {
         try {
             val url = URL(url+"users/$currentUser")
@@ -87,7 +86,6 @@ fun SelectUserScreen(navController: NavController, currentUser: String) {
                 .padding(padding)
                 .padding(16.dp)
         ) {
-            // Dropdown для выбора пользователя
             ExposedDropdownMenuBox(expanded = expanded, onExpandedChange = { expanded = !expanded }) {
                 OutlinedTextField(
                     value = selectedUser ?: "",

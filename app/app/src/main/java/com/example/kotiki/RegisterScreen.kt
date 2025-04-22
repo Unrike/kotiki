@@ -41,7 +41,6 @@ fun RegisterScreen(navController: NavController) {
     val scope = rememberCoroutineScope()
 
     BackHandler(enabled = true) {
-        // Блокируем кнопку назад
     }
 
     fun registerUser(login: String, password: String) {
@@ -61,7 +60,6 @@ fun RegisterScreen(navController: NavController) {
 
                     val responseCode = responseCode
                     if (responseCode == HttpURLConnection.HTTP_OK) {
-                        // Успешная регистрация
                         Log.d("REGISTER", "Success")
                         withContext(Dispatchers.Main){ navController.navigate("select_user/${login}") }
                     } else {
